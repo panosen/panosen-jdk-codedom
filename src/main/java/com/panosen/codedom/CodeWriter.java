@@ -1,5 +1,7 @@
 package com.panosen.codedom;
 
+import com.google.common.base.Strings;
+
 import java.io.StringWriter;
 
 /**
@@ -15,27 +17,34 @@ public class CodeWriter {
 
     /**
      * 写入字符串，可以为 null
+     *
      * @param value value
      * @return CodeWriter
      */
     public CodeWriter write(String value) {
-        stringWriter.write(value);
+        if (!Strings.isNullOrEmpty(value)) {
+            stringWriter.write(value);
+        }
         return this;
     }
 
     /**
      * 写入字符串，可以为 null
+     *
      * @param value value
      * @return CodeWriter
      */
     public CodeWriter writeLine(String value) {
-        stringWriter.write(value);
+        if (!Strings.isNullOrEmpty(value)) {
+            stringWriter.write(value);
+        }
         stringWriter.write(System.lineSeparator());
         return this;
     }
 
     /**
      * 写入换行符
+     *
      * @return CodeWriter
      */
     public CodeWriter writeLine() {
