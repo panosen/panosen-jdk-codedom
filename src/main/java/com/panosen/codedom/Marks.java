@@ -138,4 +138,9 @@ public final class Marks {
      * *
      */
     public static final String STAR = "*";
+
+    /**
+     * `
+     */
+    private static final String BACKQUOTE = "`";
 }
