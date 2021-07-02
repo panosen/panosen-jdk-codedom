@@ -142,5 +142,5 @@ public final class Marks {
     /**
      * `
      */
-    private static final String BACKQUOTE = "`";
+    public static final String BACKQUOTE = "`";
 }
