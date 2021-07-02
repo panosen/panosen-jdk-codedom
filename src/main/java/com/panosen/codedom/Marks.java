@@ -143,4 +143,9 @@ public final class Marks {
      * `
      */
     public static final String BACKQUOTE = "`";
+
+    /**
+     * ?
+     */
+    public static final String QUESTION = "?";
 }
