@@ -133,4 +133,9 @@ public final class Marks {
      * $
      */
     public static final String DOLLAR = "$";
+
+    /**
+     * *
+     */
+    public static final String STAR = "*";
 }
