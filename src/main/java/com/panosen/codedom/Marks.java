@@ -60,6 +60,11 @@ public final class Marks {
     public static final String EQUAL = "=";
 
     /**
+     * !=
+     */
+    public static final String NOT_EQUAL = "!=";
+
+    /**
      * &lt;
      */
     public static final String LESS_THAN = "<";
