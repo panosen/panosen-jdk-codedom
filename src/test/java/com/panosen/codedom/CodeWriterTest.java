@@ -3,19 +3,17 @@ package com.panosen.codedom;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.StringWriter;
-
 public class CodeWriterTest {
 
     private final String LINE_SEPARATOR = System.lineSeparator();
 
     @Test
     public void write() {
-        StringWriter stringWriter = new StringWriter();
-        CodeWriter codeWriter = new CodeWriter(stringWriter);
+        StringBuilder stringBuilder = new StringBuilder();
+        CodeWriter codeWriter = new CodeWriter(stringBuilder);
 
         codeWriter.write("abc");
-        String actual = stringWriter.toString();
+        String actual = stringBuilder.toString();
 
         String expected = "abc";
         Assert.assertEquals(expected, actual);
@@ -23,11 +21,11 @@ public class CodeWriterTest {
 
     @Test
     public void writeLine() {
-        StringWriter stringWriter = new StringWriter();
-        CodeWriter codeWriter = new CodeWriter(stringWriter);
+        StringBuilder stringBuilder = new StringBuilder();
+        CodeWriter codeWriter = new CodeWriter(stringBuilder);
 
         codeWriter.writeLine("abc");
-        String actual = stringWriter.toString();
+        String actual = stringBuilder.toString();
 
         String expected = "abc" + LINE_SEPARATOR;
         Assert.assertEquals(expected, actual);
@@ -35,11 +33,11 @@ public class CodeWriterTest {
 
     @Test
     public void testWriteLine() {
-        StringWriter stringWriter = new StringWriter();
-        CodeWriter codeWriter = new CodeWriter(stringWriter);
+        StringBuilder stringBuilder = new StringBuilder();
+        CodeWriter codeWriter = new CodeWriter(stringBuilder);
 
         codeWriter.writeLine();
-        String actual = stringWriter.toString();
+        String actual = stringBuilder.toString();
 
         Assert.assertEquals(LINE_SEPARATOR, actual);
     }
