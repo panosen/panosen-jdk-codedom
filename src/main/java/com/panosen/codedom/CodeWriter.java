@@ -9,10 +9,10 @@ import java.io.StringWriter;
  */
 public class CodeWriter {
 
-    private final StringBuilder stringBuilder;
+    private final StringWriter stringWriter;
 
-    public CodeWriter(StringBuilder stringBuilder) {
-        this.stringBuilder = stringBuilder;
+    public CodeWriter(StringWriter stringWriter) {
+        this.stringWriter = stringWriter;
     }
 
     /**
@@ -23,7 +23,7 @@ public class CodeWriter {
      */
     public CodeWriter write(String value) {
         if (!Strings.isNullOrEmpty(value)) {
-            stringBuilder.append(value);
+            stringWriter.append(value);
         }
         return this;
     }
@@ -36,9 +36,9 @@ public class CodeWriter {
      */
     public CodeWriter writeLine(String value) {
         if (!Strings.isNullOrEmpty(value)) {
-            stringBuilder.append(value);
+            stringWriter.append(value);
         }
-        stringBuilder.append(System.lineSeparator());
+        stringWriter.append(System.lineSeparator());
         return this;
     }
 
@@ -48,7 +48,7 @@ public class CodeWriter {
      * @return CodeWriter
      */
     public CodeWriter writeLine() {
-        stringBuilder.append(System.lineSeparator());
+        stringWriter.append(System.lineSeparator());
         return this;
     }
 }
