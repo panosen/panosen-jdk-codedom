@@ -29,6 +29,20 @@ public class DataValue extends DataItem {
         return dataValue;
     }
 
+    public static DataValue ofString(String value) {
+        DataValue dataValue = new DataValue();
+        dataValue.value = value;
+        return dataValue;
+    }
+
+    public static DataValue ofBoolean(Boolean value) {
+        DataValue dataValue = new DataValue();
+        if (value != null) {
+            dataValue.value = value ? "true" : "false";
+        }
+        return dataValue;
+    }
+
     public static DataValue singleQuotationString(String value) {
         DataValue dataValue = new DataValue();
         dataValue.value = Marks.SINGLE_QUOTATION + value + Marks.SINGLE_QUOTATION;
