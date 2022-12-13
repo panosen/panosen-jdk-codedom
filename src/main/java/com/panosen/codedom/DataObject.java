@@ -2,26 +2,32 @@ package com.panosen.codedom;
 
 import com.google.common.collect.Maps;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class DataObject extends DataItem {
 
-    /**
-     * 每一个项是一个 DataValue 或 DataArray 或 DataObject
-     */
-    public Map<DataKey, DataItem> dataItemMap;
+    @Override
+    public DataItemType getDataItemType() {
+        return DataItemType.DataObject;
+    }
 
-    public Map<DataKey, DataItem> getDataItemMap() {
+    /**
+     * 每一个项是一个 DataValue 或 DataArray 或 DataObject 或 SortedDataObject
+     */
+    public LinkedHashMap<DataKey, DataItem> dataItemMap;
+
+    public LinkedHashMap<DataKey, DataItem> getDataItemMap() {
         return dataItemMap;
     }
 
-    public void setDataItemMap(Map<DataKey, DataItem> dataItemMap) {
+    public void setDataItemMap(LinkedHashMap<DataKey, DataItem> dataItemMap) {
         this.dataItemMap = dataItemMap;
     }
 
     public DataObject add(DataKey dataKey, DataItem dataItem) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newHashMap();
+            this.dataItemMap = Maps.newLinkedHashMap();
         }
 
         this.dataItemMap.putIfAbsent(dataKey, dataItem);
@@ -35,7 +41,7 @@ public class DataObject extends DataItem {
 
     public DataValue addDataValue(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newHashMap();
+            this.dataItemMap = Maps.newLinkedHashMap();
         }
 
         DataValue dataValue = new DataValue();
@@ -49,12 +55,12 @@ public class DataObject extends DataItem {
         return add(dataKey, dataArray);
     }
 
-    /// <summary>
-    /// 添加一个数组，并返回该数组
-    /// </summary>
-    public DataArray AddDataArray(DataKey dataKey) {
+    /*
+     * 添加一个数组，并返回该数组
+     **/
+    public DataArray addDataArray(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newHashMap();
+            this.dataItemMap = Maps.newLinkedHashMap();
         }
 
         DataArray dataArray = new DataArray();
@@ -68,12 +74,12 @@ public class DataObject extends DataItem {
         return add(dataKey, subDataObject);
     }
 
-    /// <summary>
-    /// 添加一个对象，并返回该对象
-    /// </summary>
-    public DataObject AddDataObject(DataKey dataKey) {
+    /*
+     * 添加一个对象，并返回该对象
+     **/
+    public DataObject addDataObject(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newHashMap();
+            this.dataItemMap = Maps.newLinkedHashMap();
         }
 
         DataObject subDataObject = new DataObject();
@@ -83,19 +89,19 @@ public class DataObject extends DataItem {
         return subDataObject;
     }
 
-    /// <summary>
-    /// 添加一个对象
-    /// </summary>
+    /*
+     * 添加一个对象
+     **/
     public DataObject addSortedDataObject(DataKey dataKey, SortedDataObject subSortedDataObject) {
         return add(dataKey, subSortedDataObject);
     }
 
-    /// <summary>
-    /// 添加一个对象，并返回该对象
-    /// </summary>
-    public SortedDataObject AddSortedDataObject(DataKey dataKey) {
+    /*
+     * 添加一个对象，并返回该对象
+     **/
+    public SortedDataObject addSortedDataObject(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newHashMap();
+            this.dataItemMap = Maps.newLinkedHashMap();
         }
 
         SortedDataObject subSortedDataObject = new SortedDataObject();

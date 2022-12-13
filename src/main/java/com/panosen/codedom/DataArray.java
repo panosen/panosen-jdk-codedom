@@ -6,6 +6,11 @@ import java.util.List;
 
 public class DataArray extends DataItem {
 
+    @Override
+    public DataItemType getDataItemType() {
+        return DataItemType.DataArray;
+    }
+
     private List<DataItem> items;
 
     public List<DataItem> getItems() {

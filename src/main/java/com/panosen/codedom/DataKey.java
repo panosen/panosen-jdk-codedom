@@ -1,6 +1,16 @@
 package com.panosen.codedom;
 
-public class DataKey {
+public class DataKey implements Comparable {
+
+    // region Comparable Members
+
+    @Override
+    public int compareTo(Object o) {
+        DataKey dataKey = (DataKey)o;
+        return this.value.compareTo(dataKey.value);
+    }
+
+    // endregion
 
     private String value;
 
