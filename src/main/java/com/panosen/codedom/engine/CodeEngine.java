@@ -112,7 +112,13 @@ public class CodeEngine {
         boolean moveNext = enumerator.hasNext();
         while (moveNext) {
             Map.Entry<DataKey, DataItem> item = enumerator.next();
-            codeWriter.write(options.getIndentString()).write(item.getKey().getValue()).write(Marks.COLON).write(Marks.WHITESPACE);
+            codeWriter.write(options.getIndentString()).write(item.getKey().getValue());
+
+            if (options.isInsertWhitespaceAfterKey()) {
+                codeWriter.write(Marks.WHITESPACE);
+            }
+
+            codeWriter.write(Marks.COLON).write(Marks.WHITESPACE);
 
             if (item.getValue() == null) {
                 codeWriter.write("null");

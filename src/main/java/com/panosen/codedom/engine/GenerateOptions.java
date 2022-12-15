@@ -7,6 +7,21 @@ public class GenerateOptions {
 
     public String indentString = "";
 
+    private boolean insertWhitespaceAfterKey;
+
+    public boolean isInsertWhitespaceAfterKey() {
+        return insertWhitespaceAfterKey;
+    }
+
+    public void setInsertWhitespaceAfterKey(boolean insertWhitespaceAfterKey) {
+        this.insertWhitespaceAfterKey = insertWhitespaceAfterKey;
+    }
+
+    public GenerateOptions setInsertWhitespaceAfterKey() {
+        this.insertWhitespaceAfterKey = true;
+        return this;
+    }
+
     public String getTabString() {
         return tabString;
     }
