@@ -1,7 +1,5 @@
 package com.panosen.codedom;
 
-import com.google.common.collect.Maps;
-
 import java.util.TreeMap;
 
 public class SortedDataObject extends DataItem {
@@ -26,7 +24,7 @@ public class SortedDataObject extends DataItem {
 
     public SortedDataObject add(DataKey dataKey, DataItem dataItem) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newTreeMap();
+            this.dataItemMap = new TreeMap<>();
         }
 
         this.dataItemMap.putIfAbsent(dataKey, dataItem);
@@ -40,7 +38,7 @@ public class SortedDataObject extends DataItem {
 
     public DataValue addDataValue(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newTreeMap();
+            this.dataItemMap = new TreeMap<>();
         }
 
         DataValue dataValue = new DataValue();
@@ -59,7 +57,7 @@ public class SortedDataObject extends DataItem {
      **/
     public DataArray addDataArray(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newTreeMap();
+            this.dataItemMap = new TreeMap<>();
         }
 
         DataArray dataArray = new DataArray();
@@ -78,7 +76,7 @@ public class SortedDataObject extends DataItem {
      **/
     public DataObject addDataObject(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newTreeMap();
+            this.dataItemMap = new TreeMap<>();
         }
 
         DataObject subDataObject = new DataObject();
@@ -100,7 +98,7 @@ public class SortedDataObject extends DataItem {
      **/
     public SortedDataObject addSortedDataObject(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newTreeMap();
+            this.dataItemMap = new TreeMap<>();
         }
 
         SortedDataObject subSortedDataObject = new SortedDataObject();

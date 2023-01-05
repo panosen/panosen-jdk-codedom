@@ -1,9 +1,6 @@
 package com.panosen.codedom;
 
-import com.google.common.collect.Maps;
-
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class DataObject extends DataItem {
 
@@ -27,7 +24,7 @@ public class DataObject extends DataItem {
 
     public DataObject add(DataKey dataKey, DataItem dataItem) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newLinkedHashMap();
+            this.dataItemMap = new LinkedHashMap<>();
         }
 
         this.dataItemMap.putIfAbsent(dataKey, dataItem);
@@ -41,7 +38,7 @@ public class DataObject extends DataItem {
 
     public DataValue addDataValue(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newLinkedHashMap();
+            this.dataItemMap = new LinkedHashMap<>();
         }
 
         DataValue dataValue = new DataValue();
@@ -60,7 +57,7 @@ public class DataObject extends DataItem {
      **/
     public DataArray addDataArray(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newLinkedHashMap();
+            this.dataItemMap = new LinkedHashMap<>();
         }
 
         DataArray dataArray = new DataArray();
@@ -79,7 +76,7 @@ public class DataObject extends DataItem {
      **/
     public DataObject addDataObject(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newLinkedHashMap();
+            this.dataItemMap = new LinkedHashMap<>();
         }
 
         DataObject subDataObject = new DataObject();
@@ -101,7 +98,7 @@ public class DataObject extends DataItem {
      **/
     public SortedDataObject addSortedDataObject(DataKey dataKey) {
         if (this.dataItemMap == null) {
-            this.dataItemMap = Maps.newLinkedHashMap();
+            this.dataItemMap = new LinkedHashMap<>();
         }
 
         SortedDataObject subSortedDataObject = new SortedDataObject();

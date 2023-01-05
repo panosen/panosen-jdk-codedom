@@ -6,7 +6,7 @@
 
     <groupId>com.panosen</groupId>
     <artifactId>panosen-codedom</artifactId>
-    <version>1.4.2</version>
+    <version>1.4.3</version>
 
     <parent>
         <groupId>com.panosen</groupId>
@@ -43,11 +43,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -1,7 +1,5 @@
 package com.panosen.codedom;
 
-import com.google.common.base.Strings;
-
 import java.io.StringWriter;
 
 /**
@@ -22,7 +20,7 @@ public class CodeWriter {
      * @return CodeWriter
      */
     public CodeWriter write(String value) {
-        if (!Strings.isNullOrEmpty(value)) {
+        if (value != null && !value.isEmpty()) {
             stringWriter.append(value);
         }
         return this;
@@ -35,7 +33,7 @@ public class CodeWriter {
      * @return CodeWriter
      */
     public CodeWriter writeLine(String value) {
-        if (!Strings.isNullOrEmpty(value)) {
+        if (value != null && !value.isEmpty()) {
             stringWriter.append(value);
         }
         stringWriter.append(System.lineSeparator());

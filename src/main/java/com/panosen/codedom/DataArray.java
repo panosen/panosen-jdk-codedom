@@ -1,7 +1,6 @@
 package com.panosen.codedom;
 
-import com.google.common.collect.Lists;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataArray extends DataItem {
@@ -29,7 +28,7 @@ public class DataArray extends DataItem {
      */
     public DataArray addDataValue(DataValue dataValue) {
         if (this.items == null) {
-            this.items = Lists.newArrayList();
+            this.items = new ArrayList<>();
         }
 
         this.items.add(dataValue);
@@ -45,7 +44,7 @@ public class DataArray extends DataItem {
      */
     public DataArray addDataObject(DataObject dataObject) {
         if (this.items == null) {
-            this.items = Lists.newArrayList();
+            this.items = new ArrayList<>();
         }
 
         this.items.add(dataObject);
@@ -60,7 +59,7 @@ public class DataArray extends DataItem {
      */
     public DataObject addDataObject() {
         if (this.items == null) {
-            this.items = Lists.newArrayList();
+            this.items = new ArrayList<>();
         }
 
         DataObject dataObject = new DataObject();
@@ -78,7 +77,7 @@ public class DataArray extends DataItem {
      */
     public DataArray addSortedDataObject(SortedDataObject sortedDataObject) {
         if (this.items == null) {
-            this.items = Lists.newArrayList();
+            this.items = new ArrayList<>();
         }
 
         this.items.add(sortedDataObject);
@@ -93,7 +92,7 @@ public class DataArray extends DataItem {
      */
     public SortedDataObject addSortedDataObject() {
         if (this.items == null) {
-            this.items = Lists.newArrayList();
+            this.items = new ArrayList<>();
         }
 
         SortedDataObject sortedDataObject = new SortedDataObject();
@@ -105,7 +104,8 @@ public class DataArray extends DataItem {
 
     /**
      * addRange
-     * @param items items
+     *
+     * @param items       items
      * @param <TDataItem> TdataItem
      * @return DataArray
      */
@@ -115,7 +115,7 @@ public class DataArray extends DataItem {
         }
 
         if (this.items == null) {
-            this.items = Lists.newArrayList();
+            this.items = new ArrayList<>();
         }
 
         this.items.addAll(items);
