@@ -1,5 +1,6 @@
 package com.panosen.codedom.engine;
 
+@Deprecated
 public class GenerateOptions {
     public String tabString = "    ";
 

@@ -4,11 +4,6 @@ import java.util.TreeMap;
 
 public class SortedDataObject extends DataItem {
 
-    @Override
-    public DataItemType getDataItemType() {
-        return DataItemType.SortedDataObject;
-    }
-
     /**
      * 每一个项是一个 DataValue 或 DataArray 或 DataObject 或 SortedDataObject
      */

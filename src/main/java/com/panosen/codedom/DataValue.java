@@ -2,11 +2,6 @@ package com.panosen.codedom;
 
 public class DataValue extends DataItem {
 
-    @Override
-    public DataItemType getDataItemType() {
-        return DataItemType.DataValue;
-    }
-
     private String value;
 
     public String getValue() {

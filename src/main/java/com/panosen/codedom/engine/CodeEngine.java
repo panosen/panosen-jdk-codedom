@@ -5,6 +5,7 @@ import com.panosen.codedom.*;
 import java.util.Iterator;
 import java.util.Map;
 
+@Deprecated
 public class CodeEngine {
 
     public void generateDataObject(DataObject dataObject, CodeWriter codeWriter, GenerateOptions options) {
@@ -44,21 +45,21 @@ public class CodeEngine {
     }
 
     private void generateDataItem(DataItem dataItem, CodeWriter codeWriter, GenerateOptions options) {
-        switch (dataItem.getDataItemType()) {
-            case DataValue:
-                generateDataValue((DataValue) dataItem, codeWriter, options);
-                break;
-            case DataArray:
-                generateDataArray((DataArray) dataItem, codeWriter, options);
-                break;
-            case DataObject:
-                generateDataObject((DataObject) dataItem, codeWriter, options);
-                break;
-            case SortedDataObject:
-                generateSortedDataObject((SortedDataObject) dataItem, codeWriter, options);
-                break;
-            default:
-                break;
+        if(dataItem instanceof DataValue){
+            generateDataValue((DataValue) dataItem, codeWriter, options);
+            return;
+        }
+        if(dataItem instanceof DataArray){
+            generateDataArray((DataArray) dataItem, codeWriter, options);
+            return;
+        }
+        if(dataItem instanceof DataObject){
+            generateDataObject((DataObject) dataItem, codeWriter, options);
+            return;
+        }
+        if(dataItem instanceof SortedDataObject){
+            generateSortedDataObject((SortedDataObject) dataItem, codeWriter, options);
+            return;
         }
     }
 
